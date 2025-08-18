@@ -1,2 +1,2 @@
-# ai_engineering_lundberg_stefan
+# ai_engineering_stefan_lundberg
 Repo to learn AI engineering
