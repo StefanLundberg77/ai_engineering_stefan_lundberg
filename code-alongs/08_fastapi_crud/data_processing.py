@@ -14,6 +14,7 @@ class Book(BaseModel):
     title: str 
     author: str 
     year: int = Field(gt = 1500, lt = 2026)
+    genre: list[str]
     model_config = {
         "json_schema_extra": {
             "example": {
@@ -24,15 +25,24 @@ class Book(BaseModel):
             }
         }
     }
-
+    
 class Library(BaseModel):
     name: str 
     books: list[Book]
+    genre: list[str]
 
 def library_data(filename):
     """Deserializes library json data into a Library model"""
     json_data = read_json(filename)
     return Library.model_validate(json_data)
+
+def write_json(filename: str, data: Library):
+    with open(DATA_PATH/filename, "w") as file:
+        json.dump(data.model_dump(), file, indent=3)
+
+def save_library(books: list[Book]):
+    data = Library(name="Coolu Libraru", books=books)
+    write_json("library.json", data) 
 
 if __name__ == '__main__':
 
