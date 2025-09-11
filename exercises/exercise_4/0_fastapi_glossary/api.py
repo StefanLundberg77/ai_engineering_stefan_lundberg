@@ -1,27 +1,29 @@
 from fastapi import FastAPI, Query
-from data_processing import BaseModel, glossary_data
+from data_processing import BaseModel, glossary_data, Gloss
 from pprint import pprint
 
 app = FastAPI()
 
 glossary = glossary_data("fastapi_glossary.json")
-# glossaries = glossary.glossaries
+words = glossary.words
 #pprint(glossary)
 
-@app.get("/glossary")
+@app.get("/words")
 async def read_glossary():
-    return glossary
+    return words
 
 # path parameter
-@app.get("/glossary/word/{word}")
-async def read_glossary_by_word(word: str):
-    return [gloss for gloss in glossary 
-            if glossary.word.casefold() == word.casefold()]
+@app.get("/words/word/{id}")
+async def read_glossary_by_id(id: int):
+    return [i for i in words 
+            if i.id == id]
 
 # query param for filtering by word
-@app.get("/glossary")
+@app.get("/words/")
 async def filter_glossary(
     word: str = Query(None, description="Word to filter")):
-        filtered_word = [gloss for gloss in glossary 
-                         if glossary.word.casefold() == word.casefold()]
-        return filtered_word
+    
+    if word:
+        filtered_word = [gloss for gloss in words 
+                        if gloss.word.casefold() == word.casefold()]
+    return filtered_word
