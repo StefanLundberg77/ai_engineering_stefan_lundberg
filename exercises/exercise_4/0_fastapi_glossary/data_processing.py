@@ -10,7 +10,7 @@ def read_json(filename):
     return data
 
 
-class Gloss(BaseModel):
+class Glossary(BaseModel):
     id: int
     word: str
     meaning: str
@@ -31,7 +31,7 @@ class Gloss(BaseModel):
 def glossary_data(filename):
     """Deserializes glossary json data into a glossary model"""
     json_data = read_json(filename)
-    return [Gloss.model_validate(item) for item in json_data]
+    return [Glossary.model_validate(item) for item in json_data]
 
 # def write_json(filename: str, data: Library):
 #     with open(DATA_PATH/filename, "w") as file:

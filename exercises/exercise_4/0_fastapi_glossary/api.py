@@ -8,6 +8,14 @@ glossary = glossary_data("fastapi_glossary.json")
 # glossaries = glossary.glossaries
 pprint(glossary)
 
-# @app.get("/glossary_list")
-# async def read_glossaries():
-#     return glossaries
+@app.get("/glossary")
+async def read_glossary():
+    return glossary
+
+# path parameter
+@app.get("/glossary/word/{word}")
+async def read_glossary_by_word(word:str):
+    return [gloss for gloss in glossary if glossary.word.casefold() == word.casefold()]
+
+# query param for word
+@app.
