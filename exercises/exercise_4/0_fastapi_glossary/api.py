@@ -6,7 +6,7 @@ app = FastAPI()
 
 glossary = glossary_data("fastapi_glossary.json")
 # glossaries = glossary.glossaries
-pprint(glossary)
+#pprint(glossary)
 
 @app.get("/glossary")
 async def read_glossary():
@@ -14,8 +14,14 @@ async def read_glossary():
 
 # path parameter
 @app.get("/glossary/word/{word}")
-async def read_glossary_by_word(word:str):
-    return [gloss for gloss in glossary if glossary.word.casefold() == word.casefold()]
+async def read_glossary_by_word(word: str):
+    return [gloss for gloss in glossary 
+            if glossary.word.casefold() == word.casefold()]
 
-# query param for word
-@app.
+# query param for filtering by word
+@app.get("/glossary")
+async def filter_glossary(
+    word: str = Query(None, description="Word to filter")):
+        filtered_word = [gloss for gloss in glossary 
+                         if glossary.word.casefold() == word.casefold()]
+        return filtered_word
