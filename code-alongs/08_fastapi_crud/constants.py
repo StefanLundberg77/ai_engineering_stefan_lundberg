@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 
-DATA_PATH = Path(__file__).parents[2] / "data"
+DATA_PATH = Path(__file__).parents[3] / "data"
 
 print("-"*20)
 print("\n"*5)
