@@ -13,7 +13,7 @@ async def read_glossary():
     return words
 
 # path parameter
-@app.get("/words/word/{id}")
+@app.get("/words/id/{id}")
 async def read_glossary_by_id(id: int):
     return [i for i in words 
             if i.id == id]
@@ -22,8 +22,7 @@ async def read_glossary_by_id(id: int):
 @app.get("/words/")
 async def filter_glossary(
     word: str = Query(None, description="Word to filter")):
-    
-    if word:
-        filtered_word = [gloss for gloss in words 
-                        if gloss.word.casefold() == word.casefold()]
-    return filtered_word
+    filter_word = [w for w in words if w.word.casefold() == word.casefold()]
+    if filter_word: 
+        return filter_word
+
