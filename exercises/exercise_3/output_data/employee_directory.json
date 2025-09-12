@@ -1,0 +1,184 @@
+{
+    "employee_directory": [
+        {
+            "first_name": "Anna",
+            "last_name": "Andersson",
+            "phone_number": "+46 701 23 45",
+            "email": "anna.andersson@foretag.se",
+            "department": "IT",
+            "salary": 48000,
+            "title": "Systemutvecklare"
+        },
+        {
+            "first_name": "Erik",
+            "last_name": "Johansson",
+            "phone_number": "+46 723 45 67",
+            "email": "erik.johansson@foretag.se",
+            "department": "HR",
+            "salary": 42000,
+            "title": "HR-specialist"
+        },
+        {
+            "first_name": "Sara",
+            "last_name": "Karlsson",
+            "phone_number": "+46 735 67 89",
+            "email": "sara.karlsson@foretag.se",
+            "department": "marketing",
+            "salary": 37000,
+            "title": "Marknadskoordinator"
+        },
+        {
+            "first_name": "Per",
+            "last_name": "Nilsson",
+            "phone_number": "+46 767 89 01",
+            "email": "per.nilsson@foretag.se",
+            "department": "sales",
+            "salary": 39000,
+            "title": "Account manager"
+        },
+        {
+            "first_name": "Lena",
+            "last_name": "Eriksson",
+            "phone_number": "+46 799 01 23",
+            "email": "lena.eriksson@foretag.se",
+            "department": "IT",
+            "salary": 55000,
+            "title": "IT-konsult"
+        },
+        {
+            "first_name": "Mikael",
+            "last_name": "Larsson",
+            "phone_number": "+46 702 12 34",
+            "email": "mikael.larsson@foretag.se",
+            "department": "HR",
+            "salary": 36000,
+            "title": "Personaladministratör"
+        },
+        {
+            "first_name": "Emma",
+            "last_name": "Olsson",
+            "phone_number": "+46 724 34 56",
+            "email": "emma.olsson@foretag.se",
+            "department": "marketing",
+            "salary": 45000,
+            "title": "Digital marknadsförare"
+        },
+        {
+            "first_name": "Jonas",
+            "last_name": "Persson",
+            "phone_number": "+46 736 56 78",
+            "email": "jonas.persson@foretag.se",
+            "department": "sales",
+            "salary": 52000,
+            "title": "Säljchef"
+        },
+        {
+            "first_name": "Maria",
+            "last_name": "Svensson",
+            "phone_number": "+46 768 78 90",
+            "email": "maria.svensson@foretag.se",
+            "department": "IT",
+            "salary": 43000,
+            "title": "Drifttekniker"
+        },
+        {
+            "first_name": "David",
+            "last_name": "Gustavsson",
+            "phone_number": "+46 790 90 12",
+            "email": "david.gustavsson@foretag.se",
+            "department": "HR",
+            "salary": 48000,
+            "title": "Rekryterare"
+        },
+        {
+            "first_name": "Sofia",
+            "last_name": "Pettersson",
+            "phone_number": "+46 703 23 45",
+            "email": "sofia.pettersson@foretag.se",
+            "department": "marketing",
+            "salary": 41000,
+            "title": "Kommunikatör"
+        },
+        {
+            "first_name": "Fredrik",
+            "last_name": "Jansson",
+            "phone_number": "+46 725 45 67",
+            "email": "fredrik.jansson@foretag.se",
+            "department": "sales",
+            "salary": 34000,
+            "title": "Säljare"
+        },
+        {
+            "first_name": "Karin",
+            "last_name": "Lundgren",
+            "phone_number": "+46 737 67 89",
+            "email": "karin.lundgren@foretag.se",
+            "department": "IT",
+            "salary": 60000,
+            "title": "Projektledare IT"
+        },
+        {
+            "first_name": "Mattias",
+            "last_name": "Lindberg",
+            "phone_number": "+46 769 89 01",
+            "email": "mattias.lindberg@foretag.se",
+            "department": "HR",
+            "salary": 53000,
+            "title": "HR-chef"
+        },
+        {
+            "first_name": "Elin",
+            "last_name": "Bergström",
+            "phone_number": "+46 791 01 23",
+            "email": "elin.bergstrom@foretag.se",
+            "department": "marketing",
+            "salary": 49000,
+            "title": "Brand manager"
+        },
+        {
+            "first_name": "Anders",
+            "last_name": "Strömberg",
+            "phone_number": "+46 704 12 34",
+            "email": "anders.stromberg@foretag.se",
+            "department": "sales",
+            "salary": 47000,
+            "title": "Key Account Manager"
+        },
+        {
+            "first_name": "Hanna",
+            "last_name": "Magnusson",
+            "phone_number": "+46 726 34 56",
+            "email": "hanna.magnusson@foretag.se",
+            "department": "IT",
+            "salary": 52000,
+            "title": "UX-designer"
+        },
+        {
+            "first_name": "Daniel",
+            "last_name": "Isaksson",
+            "phone_number": "+46 738 56 78",
+            "email": "daniel.isaksson@foretag.se",
+            "department": "HR",
+            "salary": 39000,
+            "title": "Löneadministratör"
+        },
+        {
+            "first_name": "Josefin",
+            "last_name": "Lundqvist",
+            "phone_number": "+46 760 78 90",
+            "email": "josefin.lundqvist@foretag.se",
+            "department": "marketing",
+            "salary": 38000,
+            "title": "Content manager"
+        },
+        {
+            "first_name": "Viktor",
+            "last_name": "Berg",
+            "phone_number": "+46 792 90 12",
+            "email": "viktor.berg@foretag.se",
+            "department": "sales",
+            "salary": 58000,
+            "title": "Försäljningschef"
+        }
+    ]
+}
