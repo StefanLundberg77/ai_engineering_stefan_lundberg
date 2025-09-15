@@ -1,0 +1,21 @@
+first_name,last_name,phone_number,email,department,salary,title
+Anna,Andersson,+46 70 123 45 67,anna.andersson@foretag.se,HR,36000,Personaladministratör
+Johan,Karlsson,+46 70 987 65 43,johan.karlsson@itbolaget.se,IT,48000,Systemutvecklare
+Maria,Nilsson,+46 73 555 12 34,maria.nilsson@marknad.se,marketing,42000,Digital Marknadsförare
+Erik,Lindberg,+46 76 111 22 33,erik.lindberg@saljbolaget.se,sales,39000,Säljare
+Sara,Johansson,+46 72 345 67 89,sara.johansson@techsupport.se,IT,38500,IT-supporttekniker
+Per,Svensson,+46 70 234 56 78,per.svensson@rekrytering.se,HR,41000,Rekryterare
+Lena,Gustavsson,+46 73 888 77 66,lena.gustavsson@kampanj.se,marketing,37000,Marknadskoordinator
+Daniel,Olsson,+46 76 444 55 66,daniel.olsson@account.se,sales,51000,Account Manager
+Sofia,Eriksson,+46 72 765 43 21,sofia.eriksson@natverk.se,IT,45000,Nätverkstekniker
+Magnus,Larsson,+46 70 876 54 32,magnus.larsson@hrkonsult.se,HR,47000,HR-specialist
+Emma,Persson,+46 73 222 33 44,emma.persson@kommunikation.se,marketing,40000,Kommunikatör
+Oskar,Jansson,+46 76 999 00 11,oskar.jansson@innesalj.se,sales,35000,Innesäljare
+Eva,Pettersson,+46 72 101 20 30,eva.pettersson@itprojekt.se,IT,53000,Projektledare IT
+Fredrik,Bengtsson,+46 70 303 40 50,fredrik.bengtsson@lon.se,HR,39500,Löneadministratör
+Malin,Dahlberg,+46 73 606 70 80,malin.dahlberg@contentcreation.se,marketing,43000,Content Specialist
+Anders,Bergqvist,+46 76 909 80 70,anders.bergqvist@saleslead.se,sales,58000,Försäljningschef
+Karin,Lundgren,+46 72 505 60 70,karin.lundgren@devops.se,IT,50000,DevOps-ingenjör
+Lars,Hansen,+46 70 707 80 90,lars.hansen@hrchef.se,HR,52000,HR-chef
+Elin,Söderberg,+46 73 101 11 21,elin.soderberg@seomarket.se,marketing,44000,SEO-specialist
+David,Jonsson,+46 76 202 30 40,david.jonsson@kundansvarig.se,sales,46000,Kundansvarig
