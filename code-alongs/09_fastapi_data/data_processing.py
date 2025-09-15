@@ -1,8 +1,7 @@
 import pandas as pd
 from constants import DATA_PATH
 from pprint import pprint
-import json
-from fastapi.responses import JSONResponse 
+import json 
 
 df = pd.read_csv(DATA_PATH / "sales.csv")
 
@@ -19,9 +18,21 @@ class DataExplorer:
         self._df = (self._df_full.describe().T
             .drop(["count"], axis=1)
             .drop(["Day", "Year"])
+            .reset_index()
             )
         # return self so that we can chain with other methods using dot operator
         return self
+    
+    def kpis(self, country: str):
+        """filter out kpis based on country"""
+        df_by_country = self._df_full.query(
+            "Country.str.casefold() == @country.casefold()"   
+            )
+        return {
+            "total_profit": str(df_by_country["Profit"].sum()),
+            "total_cost": str(df_by_country["Cost"].sum()),
+            "number_of_purchases": str(len(df_by_country))
+        }
     
     def json_response(self):
         json_data = self.df.to_json(orient="records")
