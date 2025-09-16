@@ -16,7 +16,7 @@ class MYH:
         
     def filter_school(self, shool: str):
         self.df = self.df_full.query(
-            "`Utbildningsanordnare administrativ enhet` == School.str.casefold() == @school.casefold()"
+            "`Utbildningsanordnare administrativ enhet` == (School.str.casefold() == @school.casefold())"
             )
         return json.loads(self.df)   
     
