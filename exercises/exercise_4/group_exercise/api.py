@@ -10,15 +10,14 @@ def read_data(limit: int = Query(100, gt=0)):
     return iris.to_json()
     
 @app.get("/iris/species")
-def filter_species(species: str):
+def species():
     iris = Iris()
-    return iris.filter_species(species).to_json()
+    return iris.species()
 
 @app.get("/iris/kpis")
 def kpis(species: str):
-     """KPIs based on species"""
     iris = Iris()
-    return iris.kpis(species)
+    return iris.kpis(species=species)
      
 # @router.get("/kpis")
 # async def read_kpis_by_country(country: str):

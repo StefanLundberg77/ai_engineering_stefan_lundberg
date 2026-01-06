@@ -14,19 +14,19 @@ class Iris:
             data = self.df.to_json(orient = "records")
             return json.loads(data)
         
-    def filter_species(self, species: str):
-            self.df = self.df_full.query(
-                "Species.str.casefold() == @species.casefold()"
-                )
-            return self
+    def species(self):
+            self.df = self.df_full
+            return self.df_full["Species"].unique().tolist()
 
-    def kpis(self, country: str):
+
+    def kpis(self, species: str):
         """Filter out kpis based on species"""
-        self.df = self._df_full.query(
+        self.df = self.df_full.query(
             "Species.str.casefold() == @species.casefold()"
         )
         return {
-            "Avg SepalLengthCm": str(self.df["SepalLengthCm"].avg()),
+            "Mean SepalLengthCm": str(self.df["SepalLengthCm"].mean()),
+            "Mean SepalWidthCm": str(self.df["SepalWidthCm"].mean())
             # "total_cost": str(df_by_country["Cost"].sum()),
             # "number_of_purchases": str(len(df_by_country)),
         }#SepalLengthCm	SepalWidthCm	PetalLengthCm	PetalWidthCm
