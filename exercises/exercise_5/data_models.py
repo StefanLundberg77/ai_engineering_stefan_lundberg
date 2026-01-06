@@ -1,0 +1,30 @@
+from pydantic import BaseModel, Field
+from typing import Literal
+
+class OpeningHours(BaseModel):
+    monday: str
+    tuesday: str
+    wednesday: str
+    thursday: str
+    friday: str
+    saturday: str
+    sunday: str
+    
+class Restaurant(BaseModel):
+    name: str
+    cuisine: str
+    price_level: Literal["cheap", "medium", "expensive"]
+    rating: int = Field(
+        gt=0,
+        lt=11,
+        description="General rating of the restaurant between 1 and 10, the higher the better"
+    )
+    description: str = Field(
+        description="Short description of the restaurant"
+    )
+    opening_hours: OpeningHours
+    location: str
+    
+
+class Prompt(BaseModel):
+    prompt: str
