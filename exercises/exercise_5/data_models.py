@@ -19,12 +19,9 @@ class Restaurant(BaseModel):
         lt=11,
         description="General rating of the restaurant between 1 and 10, the higher the better"
     )
-    description: str = Field(
-        description="Short description of the restaurant"
-    )
+    description: str
     opening_hours: OpeningHours
     location: str
     
-
 class Prompt(BaseModel):
     prompt: str
