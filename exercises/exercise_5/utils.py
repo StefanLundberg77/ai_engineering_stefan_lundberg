@@ -23,4 +23,4 @@ def query_duckdb(sql_code, parameters = None):
         if sql_code.startswith(("select", "from", "desc", "pragma")):
             
             # return sql data as dataframe
-            return cursor.df
+            return cursor.df()

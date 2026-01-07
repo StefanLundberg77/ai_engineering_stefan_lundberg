@@ -13,12 +13,12 @@ restaurant_agent = Agent(
         - name
         - cuisine (type of food)
         - price_level (cheap, medium, expensive)
-        - rating (1–10)
+        - rating (1-10)
         - description (short and informative)
         - opening_hours (structured according to the OpeningHours model)
-        - location (short description of where the restaurant is located)
+        - location (street address and city of the restaurant)
 
         Keep descriptions concise, realistic, and helpful.
         """,
-    output_type=Restaurant,
+    output_type=list[Restaurant],
 )

@@ -1,14 +1,5 @@
 from pydantic import BaseModel, Field
 from typing import Literal
-
-class OpeningHours(BaseModel):
-    monday: str
-    tuesday: str
-    wednesday: str
-    thursday: str
-    friday: str
-    saturday: str
-    sunday: str
     
 class Restaurant(BaseModel):
     name: str
@@ -20,7 +11,7 @@ class Restaurant(BaseModel):
         description="General rating of the restaurant between 1 and 10, the higher the better"
     )
     description: str
-    opening_hours: OpeningHours
+    opening_hours: str
     location: str
     
 class Prompt(BaseModel):
