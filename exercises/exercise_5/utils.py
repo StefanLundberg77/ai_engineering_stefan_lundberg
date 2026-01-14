@@ -7,22 +7,27 @@ from googlemaps import Client as GoogleMaps
 import requests 
 from urllib.parse import urljoin
 
+
 load_dotenv()
+
 
 # filepath
 DATA_PATH = Path(__file__).parent / "data"
 
+
 # if not path "data" exist then create one
 DATA_PATH.mkdir(exist_ok=True)
 
+
 gmaps = GoogleMaps(os.getenv("GOOGLE_PLACES_API_KEY"))
 
-###########################
+
 # send get request to the specified API endpoint
 def read_api_endpoint(endpoint = "/", base_url = "http://127.0.0.1:8000"):
     url = urljoin(base_url, endpoint) # adds the str endpoint and a endpoint "/" if missing for proper url formatting
     response = requests.get(url) # returns a response object
     return response
+
 
 # Send a post request with json payload to the specified api endpoint
 def post_api_endpoint(payload, endpoint = "/", base_url = "http://127.0.0.1:8000"):
@@ -30,7 +35,7 @@ def post_api_endpoint(payload, endpoint = "/", base_url = "http://127.0.0.1:8000
     response = requests.post(url=url, json=payload)
 
     return response
-#####################
+
 
 # function for executing a sql query to the database
 def query_duckdb(sql_code, parameters = None):
@@ -60,8 +65,7 @@ async def google_places_search(location: str, cuisine: str):
 
     return result["results"][0]  # best match
 
-        
-        
+         
 async def enrich_restaurant_with_ai(place, cuisine):
     prompt = f"""
     We found this real restaurant:
@@ -82,7 +86,6 @@ async def enrich_restaurant_with_ai(place, cuisine):
 
     enriched = await restaurant_agent.run(prompt)
     return enriched.output
-
 
 
 async def extract_location_and_cuisine(prompt: str):

@@ -24,6 +24,12 @@ async def search_restaurant(query: Prompt):
     # extract location + cuisine from natural language
     location, cuisine = await extract_location_and_cuisine(query.prompt)
 
+    # 2. Check DuckDB first 
+    db_matches = find_restaurants_in_db(location, cuisine)
+    
+    if not db_matches.empty: 
+        return { "source": "database", "restaurants": db_matches.to_dict(orient="records") }
+
     # search web
     place = await google_places_search(location, cuisine)
 
@@ -69,4 +75,10 @@ async def create_restaurants(query: Prompt):
     #return restaurants
     return {"inserted": len(result.output)}
 
+def find_restaurants_in_db(location: str, cuisine: str):
+    result = query_duckdb(
+        "SELECT * FROM restaurants WHERE location ILIKE ? AND cuisine ILIKE ?",
+        parameters=[f"%{location}%", f"%{cuisine}%"]
+    )
+    return result
 
