@@ -1,35 +1,12 @@
 from constants import DATA_PATH
 import json
-from pprint import pprint
-from pydantic import BaseModel, Field
+from models import Book, Library
+import duckdb
 
 def read_json(filename: str):
     with open(DATA_PATH / filename, "r") as file:
         data = json.load(file)
     return data
-
-
-class Book(BaseModel):
-    id: int 
-    title: str 
-    author: str 
-    year: int = Field(gt = 1500, lt = 2026)
-    genre: list[str]
-    model_config = {
-        "json_schema_extra": {
-            "example": {
-                "id": 11,
-                "title": "Learn with AIgineer",
-                "author": "Kokchun Giang",
-                "year": 2025,
-            }
-        }
-    }
-    
-class Library(BaseModel):
-    name: str 
-    books: list[Book]
-    genre: list[str]
 
 def library_data(filename):
     """Deserializes library json data into a Library model"""
@@ -44,9 +21,30 @@ def save_library(books: list[Book]):
     data = Library(name="Coolu Libraru", books=books)
     write_json("library.json", data) 
 
-if __name__ == '__main__':
+# async def create_book(prompt: str):
+#     result = await book_agent.run(prompt)
+#     return result.output
 
-    data = library_data("library.json")
+# function for executing a sql query to the database
+def query_duckdb(sql_code, parameters = None):
+    
+    # connection to duckdb file
+    with duckdb.connect(DATA_PATH / "restaurants.duckdb") as conn:
+        
+        # run sql code injection safe
+        cursor = conn.execute(sql_code, parameters)
+        
+        # trim whitespaces and make lower case
+        sql_code = sql_code.strip().casefold()
+        
+        # assuring code is read only
+        if sql_code.startswith(("select", "from", "desc", "pragma")):
+            
+            # return sql data as dataframe
+            return cursor.df()
 
-    pprint(data)
+# if __name__ == '__main__':
 
+#     data = library_data("library.json")
+
+#     pprint(data)

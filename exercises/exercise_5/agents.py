@@ -4,6 +4,7 @@ from data_models import Restaurant
 
 load_dotenv()
 
+# assistant for natural language that will web search if no hits in db
 restaurant_agent = Agent(    
     model="google-gla:gemini-2.5-flash",
     system_prompt="""
