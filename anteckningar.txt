@@ -1,0 +1,42 @@
+lektionsanteckningar
+
+01/16:
+
+- AI ENGINEERING
+- RAG
+- Kolla tips om bok
+- lär dig claaude code
+- gör liknande som Daniel https://github.com/wahdanz1
+
+###
+- KOLLA PACKET
+- uv init --package nytt sätt för skapa package
+###
+
+- databricks?
+
+
+
+
+
+####################
+5 månader till examen. Söker jobb som Data Engineer / Fullstack Developer.
+
+💼 https://lnkd.in/dhr7xxZ6
+
+Under min utbildning/fritid har jag byggt:
+• AI-drivet sjukhussimuleringssystem (multi-agent koordination)
+• Fullstack hushållsbudget-app (React, TypeScript, FastAPI)
+• RAG-system med automatisk doc-ingestion (dlt, LanceDB, PydanticAI)
+• WoW auction house data analyzer med OAuth och ETL pipeline (DLT, DBT)
+
+Stack: Python, FastAPI, PydanticAI, dltHub, DBT, DuckDB, PostgreSQL, LanceDB, Neo4j, React, TypeScript.
+
+Innan studierna: 10+ år inom IT, support och webbutveckling. 20 år av grafik, design och foto.
+
+Jag bygger system som fungerar OCH ser bra ut. Jag är självgående, jag levererar, och jag söker riktiga problem att lösa med människor som bryr sig om kvalitet.
+
+Examen juni 2026. Tillgänglig för anställning direkt efter.
+
+Behöver ni någon som kan bidra från dag ett? Hör av er.
+######################################
