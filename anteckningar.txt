@@ -13,11 +13,12 @@ lektionsanteckningar
 - uv init --package nytt sätt för skapa package
 ###
 
+# tips för refresh
 - databricks?
 - prompt engineering?
 
-
-
+- databricks free
+- lakeflowspark declarative pipeline
 
 
 ####################
@@ -41,3 +42,10 @@ Examen juni 2026. Tillgänglig för anställning direkt efter.
 
 Behöver ni någon som kan bidra från dag ett? Hör av er.
 ######################################
+
+IDAG: KOLLA VIDEO OCH FÖRSÖK KÖRA IGEN I RÄTT ORDNING
+
+skapa första i explorations
+
+sen ingestion
+

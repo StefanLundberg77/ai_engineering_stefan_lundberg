@@ -209,5 +209,6 @@ __marimo__/
 # vscode
 .vscode
 
-# anteckningar
-# knowledge_base
+anteckningar.txt
+knowledge_base
+.knowledge_base

@@ -1,31 +1,50 @@
-from lancedb.pydantic import Vector
+"""
+Här är några sagor, urklippta från wikipedia manuellt
+
+Ni ska lägga in dem i lancedb table med embeddings
+Göra vektorsökning på olika queries
+
+exempel: Vad heter de sju dvärgarna?
+
+Plocka fram närmaste dokumentet och använd LLM för att generera en sammanfattning av dokumentet
+
+"""
+import lancedb
+from pathlib import Path
+from lancedb.pydantic import Vector, LanceModel
 from lancedb.embeddings import get_registry
+import numpy as np 
+
+import time
+import pandas as pd
+from dotenv import load_dotenv
+
+load_dotenv()
+
+db = lancedb.connect(uri="vector_database")
 
 model = get_registry().get("gemini-text").create(name="gemini-embedding-001")
 
-model
-
 embeddings = model.generate_embeddings("Why are SQL good at relationships? Because they are relational")
 
-import numpy as np 
-np.array(embeddings).shape
+class FairytaleModel(LanceModel):
+    filename: str
+    filepath: str
+    content: str = model.SourceField()
+    embedding: Vector(3072) = model.VectorField()
 
-from lancedb.pydantic import LanceModel
+db.create_table("fairytales", schema=FairytaleModel, exist_ok=True) 
 
 
-class StoryModel(LanceModel):
-    story: str = model.SourceField() # input to embedding function
-    embedding: Vector(3072) = model.VectorField() # computed embedding in this column
-
-db.create_table("stories", schema=StoryModel, exist_ok=True) 
-
-import pandas as pd
-
-df_stories = pd.DataFrame([str], columns=['stories'])
+df_fairytale = pd.DataFrame([str], columns=['stories'])
 
 with open("data/askungen.txt", "r") as file:
     stories_data = file.read() # ?
-    
-df_stories.head()
+
+path = Path(path).mkdir(exist_ok=True)
+
+
+ 
+
 
 # läs in stories som typ list. embedda. etc

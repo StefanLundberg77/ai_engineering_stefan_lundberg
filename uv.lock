@@ -34,7 +34,6 @@ dependencies = [
     { name = "pandas" },
     { name = "pdfkit" },
     { name = "pydantic-ai" },
-    { name = "pydf" },
     { name = "pypdf" },
     { name = "python-dotenv" },
     { name = "scikit-learn" },
@@ -53,7 +52,6 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.3.3" },
     { name = "pdfkit", specifier = ">=1.0.0" },
     { name = "pydantic-ai", specifier = ">=1.39.1" },
-    { name = "pydf", specifier = ">=12" },
     { name = "pypdf", specifier = ">=6.6.0" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
     { name = "scikit-learn", specifier = ">=1.8.0" },
@@ -3315,12 +3313,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/a1/ca/40e14e196864a0f61
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ab/4c/b888e6cf58bd9db9c93f40d1c6be8283ff49d88919231afe93a6bcf61626/pydeck-0.9.1-py2.py3-none-any.whl", hash = "sha256:b3f75ba0d273fc917094fa61224f3f6076ca8752b93d46faf3bcfd9f9d59b038", size = 6900403, upload-time = "2024-05-10T15:36:17.36Z" },
 ]
-
-[[package]]
-name = "pydf"
-version = "12"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/c7/27/8174d7338be329ea3aabb185a3a19860ea97b8e223b78b21511df529e0fe/pydf-12.tar.gz", hash = "sha256:7f47a7c3abfceb1ac04fc009ded538df1ae449c31203962a1471a4eb3bf21439", size = 13537, upload-time = "2015-04-03T15:30:30.914Z" }
 
 [[package]]
 name = "pydocket"

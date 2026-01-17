@@ -1,10 +1,11 @@
 from pypdf import PdfReader
 from constants import DATA_PATH
 
-def extract_text_from_pdf(path):
+path = DATA_PATH
+
+def extract_text_from_pdf(path)-> str:
     
     all_text = ""
-    
     reader = PdfReader(path)
 
     for page in reader.pages:
@@ -17,6 +18,7 @@ def extract_text_from_pdf(path):
 def export_text(text, export_path):
     with open(export_path, "w") as file:
         file.write(text)
+
 
 if __name__ == "__main__":
     for pdf_path in DATA_PATH.glob("*.pdf"):

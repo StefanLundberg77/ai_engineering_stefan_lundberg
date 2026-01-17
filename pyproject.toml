@@ -14,7 +14,6 @@ dependencies = [
     "pandas>=2.3.3",
     "pdfkit>=1.0.0",
     "pydantic-ai>=1.39.1",
-    "pydf>=12",
     "pypdf>=6.6.0",
     "python-dotenv>=1.2.1",
     "scikit-learn>=1.8.0",
