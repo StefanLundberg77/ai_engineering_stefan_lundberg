@@ -1,6 +1,6 @@
 from pydantic_ai import Agent
 from dotenv import load_dotenv
-from models import Book
+from data_processing import Book
 
 load_dotenv()
 
@@ -26,6 +26,9 @@ book_agent = Agent(
         - title
         - author 
         - year (1500 - 2026)
+        - model_config 
         """,
     output_type=Book
-) 
+)
+
+ 
