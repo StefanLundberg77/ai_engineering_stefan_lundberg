@@ -4,9 +4,9 @@ from data_processing import Book
 
 load_dotenv()
 
-
 book_agent = Agent(    
     model="google-gla:gemini-2.5-flash",
+    retries=2,
     system_prompt="""
         You are an assistant that interprets natural language requests about books.
         The user will describe a book in free text.

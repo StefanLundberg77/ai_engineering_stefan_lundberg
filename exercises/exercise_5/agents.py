@@ -7,6 +7,7 @@ load_dotenv()
 # assistant for natural language that will web search if no hits in db
 restaurant_agent = Agent(    
     model="google-gla:gemini-2.5-flash",
+    retries=2,
     system_prompt="""
         You are an assistant that interprets natural language requests about restaurants.
         The user will describe a location and optionally a type of food in free text.
@@ -34,6 +35,7 @@ restaurant_agent = Agent(
     
 restaurant_expert_agent = Agent(    
     model="google-gla:gemini-2.5-flash",
+    retries=2,
     system_prompt="""You are an expert restaurant guide. 
         Given a location from user, you must suggest 5 restaurants that are located near the user location, 
         if no real restaurants exist in the area you are allowed to make up fictional but realistic restaurants. 

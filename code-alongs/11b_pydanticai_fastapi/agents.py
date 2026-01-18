@@ -6,6 +6,7 @@ load_dotenv()
 
 movie_agent = Agent(
     model="google-gla:gemini-2.5-flash",
+    retries=2,
     system_prompt="""You are a movie expert, based
               on a prompt, you should find the closest 
               matching movie
