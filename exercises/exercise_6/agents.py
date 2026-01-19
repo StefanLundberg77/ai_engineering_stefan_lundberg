@@ -3,14 +3,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-model = "google-gla:gemini-2.5-flash"
-
-def chat_agent(system_prompt: str) -> Agent:
-    return Agent(
-        model=model,
-        retries=2,
-        system_prompt=system_prompt,
-    )
+class Chat_Bot:
+    def __init__(self,
+        system_prompt: str, 
+        model: str = "google-gla:gemini-2.5-flash"): 
+        self.chat_agent = Agent( 
+            model=model, 
+            system_prompt=system_prompt,
+            retries=2, 
+        ) 
+        self.result = None
 
 StoryTeller = chat_agent(
     "You are an expert storyteller for children. "
