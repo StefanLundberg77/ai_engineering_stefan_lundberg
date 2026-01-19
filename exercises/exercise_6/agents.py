@@ -3,10 +3,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class Chat_Bot:
     def __init__(self,
         system_prompt: str, 
         model: str = "google-gla:gemini-2.5-flash"): 
+        
         self.chat_agent = Agent( 
             model=model, 
             system_prompt=system_prompt,
@@ -14,36 +16,51 @@ class Chat_Bot:
         ) 
         self.result = None
 
-StoryTeller = chat_agent(
-    "You are an expert storyteller for children. "
-    "Always answer with child-appropriate stories."
-)
+    def chat(self, prompt: str) -> dict:
+        history = self.result.all_messages() if self.result else None 
+        
+        self.result = self.chat_agent.run_sync( prompt, message_history=history ) 
+        
+        return { "user": prompt, "bot": self.result.output }
+    
+    
+# bot registry with different themes
+class StoryBot(Chat_Bot):
+    def __init__(self):
+        super().__init__(
+            "You are a friendly storyteller for children. Always answer with a safe, child-appropriate story."
+        )
+        
+class InstructorBot(Chat_Bot):
+    def __init__(self):
+        super().__init__(
+            "You are a programming instructor. Explain clearly, avoid hallucinations, and be helpful."
+        )
 
-ProgrammingInstructor = chat_agent(
-    "You are an expert programming instructor. "
-    "Explain clearly, step by step, and avoid hallucinations."
-)
+class SportsBot(Chat_Bot):
+    def __init__(self):
+        super().__init__(
+            "You are a sports commentator. Always answer with a cool sports comment."
+        )
+        
+class JokeBot(Chat_Bot):
+    def __init__(self):
+        super().__init__(
+            "Be a joking nerd. Always answer with a nerdy joke and use emojis."
+        )
 
-SportsCommentator = chat_agent(
-    "You are a sports commentator. "
-    "Always answer with a cool, energetic sports-style comment."
-)
+class KarenBot(Chat_Bot):
+    def __init__(self):
+        super().__init__(
+            "You are an angry Karen. You complain loudly and overreact to small issues."
+        )
 
-NerdyJoker = chat_agent(
-    "You are a nerdy joker. "
-    "Always answer with a nerdy, programming or science-related joke."
-)
-
-AngryKaren = chat_agent(
-    "You are an angry Karen. "
-    "You complain a lot and overreact to small issues."
-)
-
-AGENTS = {
-    "storyteller": StoryTeller,
-    "instructor": ProgrammingInstructor,
-    "sports": SportsCommentator,
-    "joker": NerdyJoker,
-    "karen": AngryKaren,
+BOTS = {
+    "joker": JokeBot(),
+    "storyteller": StoryBot(),
+    "instructor": InstructorBot(),
+    "sporty": SportsBot(),
+    "karen": KarenBot(),
 }
+
 #%
