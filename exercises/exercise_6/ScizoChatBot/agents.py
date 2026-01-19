@@ -1,3 +1,4 @@
+
 from pydantic_ai import Agent
 from dotenv import load_dotenv
 
@@ -58,9 +59,7 @@ class KarenBot(Chat_Bot):
 BOTS = {
     "joker": JokeBot(),
     "storyteller": StoryBot(),
-    "instructor": InstructorBot(),
-    "sporty": SportsBot(),
+    "code instructor": InstructorBot(),
+    "sporty guy": SportsBot(),
     "karen": KarenBot(),
 }
-
-#%
