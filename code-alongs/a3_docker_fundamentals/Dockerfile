@@ -7,7 +7,13 @@ WORKDIR /app
 # copies everithing in this folder in host into working dir container
 COPY . .
 
+# install requrements
 RUN pip install -r requirements.txt
 
-CMD [ "python", "dashboard.py" ]
+# define streamlit port
+EXPOSE 8501
 
+# run 
+CMD [ "streamlit", "run", "dashboard.py" ]
+
+# docker run --name dashboard cool_dashboard -p
